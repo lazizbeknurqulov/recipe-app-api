@@ -21,4 +21,4 @@ urlpatterns = [
 ]
 
 def example (x,y):
-  return x+ y
+  return x + y
