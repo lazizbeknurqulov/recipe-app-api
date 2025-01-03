@@ -1,3 +1,4 @@
+---
 name: Checks
 
 on: [push]
@@ -12,17 +13,9 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USER }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-      - name: Checkout code
+      - name: Checkout   
         uses: actions/checkout@v3
-
-      - name: Set up Docker and Docker Compose
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y docker-compose
-
-      # - name: Test
-      #   run: docker-compose run --rm app sh -c "python manage.py test"
-
+      - name: Test
+        run: docker-compose run --rm app sh -c "python manage.py test"
       - name: Lint
-        run: docker-compose run --rm app sh -c "flake8"
+        run: docker-compose run --rm app sh -c "flake8"      
