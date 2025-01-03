@@ -20,5 +20,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 ]
 
-def example (x, y):
-  return x + y
+
